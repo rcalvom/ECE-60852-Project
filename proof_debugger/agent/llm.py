@@ -21,3 +21,9 @@ class LLM():
 
     def prompt_in_chat(self):
         """Prompt a message into a chat"""
+        
+    def tool_run_bash_command(self):
+        """Run a bash command using the LLM tool"""
+    
+    def tool_run_cscope_query(self):
+        """Run a cscope query using the LLM tool"""
