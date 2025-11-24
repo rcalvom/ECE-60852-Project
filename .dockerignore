@@ -1,0 +1,23 @@
+# Git files
+.git/
+.gitignore
+.gitmodules
+
+# Docker build files
+docker-compose.yml
+.dockerignore
+projects/
+
+# Environment variables
+.env.template
+.env
+
+# Python local environment
+.venv/
+**/__pycache__/
+
+# Readme
+.readme.md
+
+# Log files
+log/

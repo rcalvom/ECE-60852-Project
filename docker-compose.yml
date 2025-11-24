@@ -1,0 +1,25 @@
+services:
+  proof-debugger:
+    build:
+      context: .
+      dockerfile: dockerfile/proof-debugger.dockerfile
+    image: proof-debugger:latest
+    container_name: proof-debugger-sandbox
+    hostname: proof-debugger
+    depends_on:
+      - tools-environment
+    env_file:
+      - .env
+    tty: true
+
+  tools-environment:
+    build:
+      context: .
+      dockerfile: dockerfile/tools-environment.dockerfile
+    image: tools-environment:latest
+    container_name: tools-environment-sandbox
+    working_dir: /workdir
+    hostname: tools-environment
+    tty: true
+    volumes:
+      - ./projects/:/workdir

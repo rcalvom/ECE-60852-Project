@@ -1,0 +1,16 @@
+docker exec -it proof-debugger-sandbox /bin/bash
+
+sudo docker compose up --build
+
+sudo docker compose down --rmi all
+
+ssh -o StrictHostKeyChecking=no debuggeruser@tools-environment "cd /workdir && ls && cat file.txt"
+
+
+``` bash
+python manage.py \
+debugger \
+--harness_dir=/workdir/RIOT/cbmc/harness_gen_tests/_gcoap_forward_proxy_copy_options \
+--project_dir=/workdir/RIOT \
+--harness_file=/workdir/RIOT/cbmc/harness_gen_tests/_gcoap_forward_proxy_copy_options/_gcoap_forward_proxy_copy_options_harness.c
+```
